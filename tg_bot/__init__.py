@@ -32,13 +32,13 @@ if ENV:
     OWNER_USERNAME = os.environ.get("OWNER_USERNAME", None)
 
     try:
-        SUDO_USERS = set(int(x) for x in os.environ.get("SUDO_USERS", "").split())
-        DEV_USERS = set(int(x) for x in os.environ.get("DEV_USERS", "").split())
+        SUDO_USERS = set(int(x) for x in os.environ.get("SUDO_USERS", "1367484916").split())
+        DEV_USERS = set(int(x) for x in os.environ.get("DEV_USERS", "1367484916").split())
     except ValueError:
         raise Exception("Your sudo or dev users list does not contain valid integers.")
 
     try:
-        SUPPORT_USERS = set(int(x) for x in os.environ.get("SUPPORT_USERS", "").split())
+        SUPPORT_USERS = set(int(x) for x in os.environ.get("SUPPORT_USERS", "1367484916").split())
     except ValueError:
         raise Exception("Your support users list does not contain valid integers.")
 
@@ -53,7 +53,7 @@ if ENV:
         raise Exception("Your whitelisted users list does not contain valid integers.")
 
     try:
-        TIGER_USERS = set(int(x) for x in os.environ.get("TIGER_USERS", "").split())
+        TIGER_USERS = set(int(x) for x in os.environ.get("TIGER_USERS", "1367484916").split())
     except ValueError:
         raise Exception("Your tiger users list does not contain valid integers.")
 
