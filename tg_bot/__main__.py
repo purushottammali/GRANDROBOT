@@ -26,17 +26,17 @@ from tg_bot.modules.helper_funcs.misc import paginate_modules
 
 
 PM_START_TEXT = """
-**Hello {}, My Name is {}!** 
-I am an **SUPERB**  group management bot.
-You can find the list of available commands with /help.
+**𝐇𝐞𝐥𝐥𝐨 ✯ {}, 𝐌𝐲 𝐍𝐚𝐦𝐞 𝐈𝐬 {}!** 
+𝐈 𝐚𝐦 𝐚𝐧 **𝐒𝐰𝐞𝐞𝐭𝐞𝐬𝐭🥰** 𝐆𝐫𝐨𝐮𝐩 𝐌𝐚𝐧𝐚𝐠𝐦𝐞𝐧𝐭 𝐁𝐨𝐭.
+𝐘𝐨𝐮 𝐜𝐚𝐧 𝐟𝐢𝐧𝐝 𝐦𝐲 𝐚𝐥𝐥 𝐚𝐯𝐚𝐢𝐥𝐚𝐛𝐥𝐞 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐬 .𝐬𝐨 𝐣𝐮𝐬𝐭 𝐡𝐢𝐭 𝐨𝐧 ☞︎︎︎ /help.
 
 """
 
 HELP_STRINGS = """
 
-Hello! my name *{}*.
+𝐇𝐞𝐥𝐥𝐨! 𝐌𝐲𝐬𝐞𝐥𝐟 *{}*.
 
-*Main* commands available:
+*𝐌𝐚𝐢𝐧 𝐌𝐞𝐧𝐮* commands available:
  - /start: start the bot
  - /help: PM's you this message.
  - /help <module name>: PM's you info about that module.
@@ -49,7 +49,7 @@ Hello! my name *{}*.
 And the following:
 """.format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
 
-TECHNO_IMG = "https://telegra.ph/file/84b2017bc2f3c90f2e61c.jpg"
+TECHNO_IMG = "https://telegra.ph/file/9b41f6636304815d177e4.mp4"
 IMPORTED = {}
 MIGRATEABLE = []
 HELPABLE = {}
@@ -111,7 +111,7 @@ def send_help(chat_id, text, keyboard=None):
 def test(bot: Bot, update: Update):
     # pprint(eval(str(update)))
     # update.effective_message.reply_text("Hola tester! _I_ *have* `markdown`", parse_mode=ParseMode.MARKDOWN)
-    update.effective_message.reply_text("This person edited a message")
+    update.effective_message.reply_text("𝐓𝐡𝐢𝐬 𝐩𝐞𝐫𝐬𝐨𝐧 𝐞𝐝𝐢𝐭𝐞𝐝 𝐭𝐡𝐢𝐬 𝐦𝐞𝐬𝐬𝐞𝐠")
     print(update.effective_message)
 
 @run_async
@@ -139,18 +139,18 @@ def start(bot: Bot, update: Update, args: List[str]):
             update.effective_message.reply_photo(
                 TECHNO_IMG,
                 PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_ID),
-                parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="🤝HELP🤝",
+                parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="🤝🏻𝐇𝐄𝐋𝐏🤝🏻",
                                                                        callback_data="help_back".format(bot.username)),
-                                                                                   InlineKeyboardButton(text="🧑‍💻My Creator🧑‍💻",
-                                                                       url="t.me/teamishere")],
-                                                                                   [InlineKeyboardButton(text="ADD GRAND OFFICIAL TO YOUR GROUP",
+                                                                                   InlineKeyboardButton(text="🔬🛠️𝐃𝐞𝐯𝐥𝐨𝐩𝐞𝐫🛠️🔬",
+                                                                       url="https://t.me/Mr_Purushottam")],
+                                                                                   [InlineKeyboardButton(text="𝐀𝐝𝐝 𝐌𝐞 𝐓𝐨 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩",
                                                                        url="t.me/{}?startgroup=true".format(bot.username)),
-                                                                                   InlineKeyboardButton(text="Source Code",
-                                                                       url="https://github.com/legendx22/GRANDROBOT")
+                                                                                   InlineKeyboardButton(text="𖣘𝐒𝐀𝐔𝐑𝐂𝐄𖣘",
+                                                                       url="https://github.com/purushottammali/SWEETY-THE-BOT/
                                                                                  ]]))
 
     else:
-        update.effective_message.reply_text("Yuss, I am Already ONline")
+        update.effective_message.reply_text("𝐈 𝐚𝐦 𝐨𝐧𝐥𝐢𝐧𝐞 𝐁𝐮𝐭 🤔𝐖𝐡𝐚𝐭 𝐀𝐫𝐞 𝐲𝐨𝐮 𝐝𝐨𝐢𝐧𝐠. 𝐌𝐲𝐬𝐞𝐥𝐟 𝐒𝐰𝐞𝐞𝐭𝐲 𝐭𝐡𝐞 𝐛𝐨𝐭 ")
 
 
 def send_start(bot, update):
@@ -201,12 +201,12 @@ def help_button(bot: Bot, update: Update):
     try:
         if mod_match:
             module = mod_match.group(1)
-            text = "Here is the help for the *{}* module:\n".format(HELPABLE[module].__mod_name__) \
+            text = "𝐇𝐞𝐫𝐞 𝐢𝐬 𝐭𝐡𝐞 𝐡𝐞𝐥𝐩 𝐟𝐨𝐫 𝐭𝐡𝐞 *{}* module:\n".format(HELPABLE[module].__mod_name__) \
                    + HELPABLE[module].__help__
             query.message.reply_text(text=text,
                                      parse_mode=ParseMode.MARKDOWN,
                                      reply_markup=InlineKeyboardMarkup(
-                                         [[InlineKeyboardButton(text="Back", callback_data="help_back")]]))
+                                         [[InlineKeyboardButton(text="🔙𝐁𝐚𝐜𝐤🔙", callback_data="help_back")]]))
 
         elif prev_match:
             curr_page = int(prev_match.group(1))
@@ -249,9 +249,9 @@ def get_help(bot: Bot, update: Update):
     # ONLY send help in PM
     if chat.type != chat.PRIVATE:
 
-        update.effective_message.reply_text("Contact me in Direct Message to get the help.",
+        update.effective_message.reply_text("𝐂𝐨𝐧𝐭𝐚𝐜𝐭 𝐦𝐞 𝐢𝐧 𝐃𝐢𝐫𝐞𝐜𝐭 𝐌𝐞𝐬𝐬𝐞𝐠.",
                                             reply_markup=InlineKeyboardMarkup(
-                                                [[InlineKeyboardButton(text="HELP",
+                                                [[InlineKeyboardButton(text="🤝🏻𝐆𝐨 𝐓𝐨 𝐃𝐌 𝐟𝐨𝐫 𝐡𝐞𝐥𝐩🆗",
                                                                        url="t.me/{}?start=help".format(
                                                                            bot.username))]]))
         return
@@ -260,7 +260,7 @@ def get_help(bot: Bot, update: Update):
         module = args[1].lower()
         text = "Here is the available help for the *{}* module:\n".format(HELPABLE[module].__mod_name__) \
                + HELPABLE[module].__help__
-        send_help(chat.id, text, InlineKeyboardMarkup([[InlineKeyboardButton(text="BACK", callback_data="help_back")]]))
+        send_help(chat.id, text, InlineKeyboardMarkup([[InlineKeyboardButton(text="🔙𝐁𝐚𝐜𝐤🔙", callback_data="help_back")]]))
 
     else:
         send_help(chat.id, HELP_STRINGS)
@@ -377,7 +377,7 @@ def settings_button(bot: Bot, update: Update):
             query.message.reply_text(text=text,
                                      parse_mode=ParseMode.MARKDOWN,
                                      reply_markup=InlineKeyboardMarkup(
-                                         [[InlineKeyboardButton(text="Back",
+                                         [[InlineKeyboardButton(text="🔙𝐁𝐀𝐂𝐊🔙",
                                                                 callback_data="stngs_back({})".format(chat_id))]]))
 
         elif prev_match:
